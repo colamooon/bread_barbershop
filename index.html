@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>브레드이발소 캐릭터 성격검사</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 대기 화면 -->
+  <section id="screen-idle" class="screen active">
+    <div class="idle-bg"></div>
+    <div class="idle-content">
+      <div class="idle-character bounce">
+        <img src="images/bread.png" alt="브레드" />
+      </div>
+      <h1 class="idle-title">
+        <span class="line1">브레드이발소</span>
+        <span class="line2">캐릭터 성격검사</span>
+      </h1>
+      <p class="idle-subtitle">나와 가장 잘 어울리는 친구는 누구일까?</p>
+      <button class="big-btn pulse" id="start-btn">화면을 터치해 시작하기!</button>
+    </div>
+  </section>
+
+  <!-- 인트로 화면 -->
+  <section id="screen-intro" class="screen">
+    <div class="intro-content">
+      <div class="intro-character bounce">
+        <img src="images/bread.png" alt="브레드" />
+      </div>
+      <div class="speech-bubble big">
+        <p id="intro-text">어서 와! 나는 브레드야.</p>
+      </div>
+      <button class="big-btn" id="intro-next-btn" style="display:none;">다음 ▶</button>
+    </div>
+  </section>
+
+  <!-- 질문 화면 -->
+  <section id="screen-question" class="screen">
+    <div class="question-header">
+      <div class="step-indicator">
+        <span class="step-text">질문 <span id="q-current">1</span> / <span id="q-total">5</span></span>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+      <div class="mini-bread">
+        <img src="images/bread.png" alt="브레드" />
+      </div>
+    </div>
+    <h2 class="question-text" id="question-text">질문 내용</h2>
+    <div class="options-grid" id="options-grid">
+      <!-- 동적 생성 -->
+    </div>
+  </section>
+
+  <!-- 결과 로딩 화면 -->
+  <section id="screen-loading" class="screen">
+    <div class="loading-content">
+      <div class="loading-character spin">
+        <img src="images/bread.png" alt="브레드" />
+      </div>
+      <h2 class="loading-text">너에게 어울리는 친구를 찾고 있어...</h2>
+      <div class="loading-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 결과 화면 -->
+  <section id="screen-result" class="screen">
+    <div class="result-burst">
+      <div class="confetti"></div>
+    </div>
+    <div class="result-content">
+      <p class="result-announce">너와 가장 잘 어울리는 친구는...</p>
+      <div class="result-character">
+        <img id="result-img" src="" alt="" />
+      </div>
+      <h1 class="result-name" id="result-name">캐릭터명</h1>
+      <p class="result-title" id="result-title">한줄 소개</p>
+      <p class="result-desc" id="result-desc">성격 설명</p>
+      <div class="result-cta">
+        <p class="cta-msg">🎫 다음 코너에서 캐릭터 카드를 픽업하고<br/>전시를 즐겨봐!</p>
+      </div>
+      <div class="result-buttons">
+        <button class="big-btn restart-btn" id="restart-btn">🔄 다시 하기</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 자동 리셋 안내 -->
+  <div id="auto-reset" class="auto-reset hidden">
+    <span id="auto-reset-timer">15</span>초 후 처음으로 돌아갑니다
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
