@@ -156,6 +156,14 @@ body {
   box-shadow: 0 2px 0 #C44A1F, 0 5px 10px rgba(0,0,0,0.2);
 }
 
+.print-btn {
+  background: #4A90D9;
+  box-shadow: 0 8px 0 #2E6BA8, 0 15px 25px rgba(0,0,0,0.2);
+}
+.print-btn:active {
+  box-shadow: 0 2px 0 #2E6BA8, 0 5px 10px rgba(0,0,0,0.2);
+}
+
 .restart-btn {
   background: #6FCF97;
   box-shadow: 0 8px 0 #4A9971, 0 15px 25px rgba(0,0,0,0.2);
@@ -607,4 +615,60 @@ body {
   .option-card { min-height: 12vh; padding: 3vh 4vw; }
   .question-text { font-size: 4vh; }
   .result-name { font-size: 7vh; }
+}
+
+/* ============================================
+   인쇄
+   ============================================ */
+@media print {
+  body {
+    background: #FFF;
+    margin: 0;
+  }
+
+  .screen:not(#screen-result) {
+    display: none !important;
+  }
+
+  #screen-result {
+    position: static;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: #FFF;
+    padding: 0;
+    overflow: visible;
+    min-height: 100vh;
+  }
+
+  .result-burst,
+  .result-buttons,
+  .auto-reset,
+  .result-announce,
+  .result-name,
+  .result-title,
+  .result-desc,
+  .result-cta {
+    display: none !important;
+  }
+
+  .result-content {
+    max-width: 100%;
+    gap: 0;
+  }
+
+  .result-character {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    animation: none;
+  }
+
+  .result-character img {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    object-fit: contain;
+    filter: none;
+  }
 }
