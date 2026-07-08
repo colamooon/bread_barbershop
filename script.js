@@ -186,6 +186,7 @@ const els = {
   resultName: document.getElementById('result-name'),
   resultTitle: document.getElementById('result-title'),
   resultDesc: document.getElementById('result-desc'),
+  printBtn: document.getElementById('print-btn'),
   restartBtn: document.getElementById('restart-btn'),
   autoReset: document.getElementById('auto-reset'),
   autoResetTimer: document.getElementById('auto-reset-timer'),
@@ -328,6 +329,10 @@ function showResult(charKey) {
 /* ============================================
    다시 하기 / 자동 리셋
    ============================================ */
+els.printBtn.addEventListener('click', () => {
+  window.print();
+});
+
 els.restartBtn.addEventListener('click', () => {
   stopAutoResetTimer();
   goToIdle();
